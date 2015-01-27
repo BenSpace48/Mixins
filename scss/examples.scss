@@ -1,0 +1,21 @@
+// Mixins
+
+@import "mixins/mini-grid";
+
+//Examples
+
+@import "examples/mini-grid";
+
+
+// Website
+
+body {
+    background: #eee;
+}
+
+.wrapper {
+    max-width: 960px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 30px;
+}
