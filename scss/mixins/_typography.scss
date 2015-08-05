@@ -1,0 +1,40 @@
+
+// *****
+// Font size mixin
+// *****
+
+// A short mixin to convert pixel font size into rem, with a fallback for older browsers.
+
+@mixin font-size($font-size-in-px: 16) {
+    font-size: $font-size-in-px+px;
+    font-size: ($font-size-in-px / 10)+rem;
+}
+
+
+
+// *****
+// Headings map
+// *****
+//
+// An easy and fast way to view and set the default heading sizes.
+//
+// A map containing the 6 headings and their font-size in pixels.
+$headings: (
+    h1: 50,
+    h2: 40,
+    h3: 30,
+    h4: 25,
+    h5: 20,
+    h6: 16
+);
+
+// Loop through the above map printing out the relevent font-size for each heading
+@each $heading, $heading-size in $headings {
+    #{$heading} {
+        @include font-size($heading-size);
+    }
+}
+
+.test {
+    @include font-size(44);
+}

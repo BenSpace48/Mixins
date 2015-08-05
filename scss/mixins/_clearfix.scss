@@ -1,0 +1,23 @@
+// *****
+// Clearfix
+// *****
+
+// A mixin that allows you to easily add clearfix to an element.
+
+@mixin clearfix {
+    *zoom: 1;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+}
+
+// USAGE
+//
+// .my-element {
+//     @include clearfix;
+// }
+//

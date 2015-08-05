@@ -1,0 +1,35 @@
+// *****
+// COLOURS
+// *****
+
+// A map of the colours, it's easier to view, maintain and use than loads of variables
+// There should not be any colors specified in any other SCSS file, if a colour needs to be used it should be added to the map and this function should be used.
+$colors: (
+    green: (
+        base: #1bbc9b,
+        dark: #18a689
+    ),
+    blue: (
+        base: #2d3e4f,
+        dark: #34495e
+    ),
+    gray: (
+        light: #ddd,
+        base: #aaa,
+        dark: #555
+    ),
+    white: (
+        base: #fff
+    ),
+    black: (
+        base: #000
+    )
+);
+
+// Instead of writing map-get over and over we can write a short function to retrieve the colour from the above map
+//
+// You only need to define the colour, the tone is optional. If no tone is entered it will default to base.
+// This allows us to just write 'color(green)' to retreive the base green colour, and 'color(green, dark)' to retrieve the dark shade of green.
+@function color($color, $tone: base) {
+    @return map-get(map-get($colors, $color), $tone);
+}

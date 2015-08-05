@@ -1,0 +1,29 @@
+// *****
+// Image URL Function
+// *****
+
+// A small function to replace Compass' image-url feature.
+// It saves you having to specify the image path everytime.
+
+// Define image directory here
+// This should be an absolute path such as skin/frontend/package-name/theme-name/images/
+// Always include a forward slash at the start and end of the url.
+$image-directory: "/images/";
+
+// Function to automatically compile the image directory followed by the image name
+@function image-url($image-name) {
+    @return url+"("+'"#{$image-directory}#{$image-name}"'+")";
+}
+
+
+
+// Usage example
+//
+// To use this function you just need to call it with image-url("X.jpg") - Where "X" is the image name.
+// If you have an image in a subfolder such as /images/image-subfolder then you'd write image-url("image-subfolder/X.jpg")
+//
+// Example
+//
+// body {
+//     background: image-url("test.jpg");
+// }

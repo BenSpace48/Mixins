@@ -1,0 +1,17 @@
+// Background opcaity mixin
+//
+// Input a hex code and this mixin returns an rgba background with a fallback for older browsers.
+// The opacity value is optional, if it isn't specified it will use .5 as a default.
+//
+// To help with consistency I'd recommend setting a global default value for opacity such as $opacity-default: .5; and using that as the default.
+//
+// Usage
+//
+// @include background-opacity(#000, .75); - With opacity specified
+// @include background-opacity(#fff) - Use default opacity of .5
+
+
+@mixin background-opacity($background-color, $background-opacity: .5) {
+    background: $background-color;
+    background: rgba($background-color, $background-opacity);
+}

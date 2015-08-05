@@ -1,0 +1,50 @@
+// *****
+// Position
+// *****
+
+// This mixin allows you to specify the position much quicker and easier.
+// Instead of writing top, right, bottom, left you can just enter the value
+
+
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: $position;
+}
+
+// USAGE
+//
+//
+
+//
+// You need to specify the position e.g absolute or relative, and the values for top/right/bottom/left in that order.
+
+// .my-element {
+//     @include position(absolute, 0, auto, 0, auto);
+// }
+
+// This outputs to:
+
+// .my-element {
+//   top: 0;
+//   right: auto;
+//   bottom: 0;
+//   left: auto;
+//   position: absolute; }
+
+// Values will default to auto so if you only need to specify top you can ignore the rest like so:
+
+.my-element {
+    @include position(absolute, 0);
+}
+
+// This outputs to:
+
+// .my-element {
+//   top: 0;
+//   right: auto;
+//   bottom: auto;
+//   left: auto;
+//   position: absolute; }

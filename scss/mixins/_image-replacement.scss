@@ -1,0 +1,17 @@
+// ****
+// Image replacement
+// ****
+
+// A mixin to replace an image with text, useful for logos etc.
+
+@mixin image-replacement {
+    overflow:hidden;
+    text-indent:-9000px;
+    display:block;
+}
+
+// USAGE
+//
+// .my-element {
+//     @include image-replacement;
+// }
